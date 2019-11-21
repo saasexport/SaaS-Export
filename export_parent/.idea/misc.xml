@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/export_cargo_service" />
+    <file type="web" url="file://$PROJECT_DIR$/export_company_service" />
+    <file type="web" url="file://$PROJECT_DIR$/export_stat_service" />
+    <file type="web" url="file://$PROJECT_DIR$/export_web_manager" />
+    <file type="web" url="file://$PROJECT_DIR$/export_web_portal" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>JavaDocJava</id>
+          </State>
+          <State>
+            <id>初始化Java</id>
+          </State>
+          <State>
+            <id>反射访问Java</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>JavadocHtmlLint</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
