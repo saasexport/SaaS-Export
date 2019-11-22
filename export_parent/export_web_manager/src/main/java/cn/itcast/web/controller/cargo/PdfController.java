@@ -176,7 +176,7 @@ public class PdfController extends BaseController{
         ShippingOrder shippingOrder = shippingOrderService.findById(shippingOrderId);
 
         //1.加载pdf模板;(通过session找到模板在项目中的路径);
-        String path = session.getServletContext().getRealPath("/") + "jasper/shipping.jasper";
+        String path = session.getServletContext().getRealPath("/") + "/jasper/shipping.jasper";
         //2.填充数据(需要三个参数);
            /* 参数一:模板路径;
             参数二:需要填充到模板中的数据的类型;
