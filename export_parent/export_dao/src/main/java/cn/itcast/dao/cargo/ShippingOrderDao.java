@@ -12,7 +12,8 @@ public interface ShippingOrderDao {
     int deleteByPrimaryKey(String shippingOrderId);
     //添加委托单
     int insert(ShippingOrder record);
-    //添加委托单
+    //添加委托单11111
+
     int insertSelective(ShippingOrder record);
     //查询委托单列表
     List<ShippingOrder> selectByExample(ShippingOrderExample example);
