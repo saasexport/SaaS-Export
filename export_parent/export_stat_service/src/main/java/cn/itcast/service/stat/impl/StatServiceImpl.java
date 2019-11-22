@@ -26,4 +26,13 @@ public class StatServiceImpl implements StatService {
     public List<Map> getOnlineData(String companyId) {
         return statDao.getOnlineData(companyId);
     }
+
+    public List<Map> getMakertData(String companyId) {
+        return statDao.getMakertData(companyId);
+    }
+
+    //获取访问IP前十名(高策)
+    public List<Map> getIpRankData(String companyId) {
+        return statDao.getIpRankData(companyId);
+    }
 }
