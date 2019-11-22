@@ -7,3 +7,4 @@ target
 .classpath	
 *.class
 .idea
+db.properties
