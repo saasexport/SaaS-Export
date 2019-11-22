@@ -112,7 +112,7 @@
                         <th class="sorting"></th>
                         <th class="sorting">委托单号</th>
                         <th class="sorting">运输方式</th>
-                        <th class="sorting">提货抬头</th>
+                        <th class="sorting">提单抬头</th>
                         <th class="sorting">装运港</th>
                         <th class="sorting">卸货港</th>
                         <th class="sorting">装期</th>
