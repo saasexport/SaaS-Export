@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="export_web_manager:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="39b45bd0-1096-401a-941e-a75b2a988d76" name="默认更改列表" comment="" />
+    <list default="true" id="39b45bd0-1096-401a-941e-a75b2a988d76" name="默认更改列表" comment="默认更改列表">
+      <change afterPath="$PROJECT_DIR$/.idea/export_parent.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_cargo_interface/export_cargo_interface.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_cargo_service/export_cargo_service.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_common/export_common.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_company_interface/export_company_interface.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_company_service/export_company_service.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_dao/export_dao.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_domain/export_domain.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_service_system/export_service_system.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_stat_interface/export_stat_interface.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_stat_service/export_stat_service.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_manager/export_web_manager.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/export_web_portal.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2019.11.22-10.08推送测试.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_dao/src/main/resources/properties/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/export_dao/src/main/resources/properties/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_service_system/src/main/java/cn/itcast/service/company/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/export_service_system/src/main/java/cn/itcast/service/company/CompanyService.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/export_web_portal/target/" />
@@ -23,22 +47,63 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/export_service_system/src/main/java/cn/itcast/service/company/CompanyService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>com.gyhqq</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>cn.itcast</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/export_generator/src/main/resources/mybatis-generator.xml" />
+        <option value="$PROJECT_DIR$/export_domain/src/main/java/cn/itcast/domain/cargo/ShippingOrder.java" />
+        <option value="$PROJECT_DIR$/export_dao/src/main/resources/cn/itcast/dao/cargo/ShippingOrderDao.xml" />
+        <option value="$PROJECT_DIR$/export_dao/src/main/resources/properties/db.properties" />
+        <option value="$PROJECT_DIR$/export_dao/src/main/java/cn/itcast/dao/cargo/ShippingOrderDao.java" />
+        <option value="$PROJECT_DIR$/export_service_system/src/main/java/cn/itcast/service/company/CompanyService.java" />
       </list>
     </option>
+  </component>
+  <component name="JRebelWorkspace">
+    <option name="jrebelEnabledAutocompile" value="true" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -66,7 +131,8 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="960" />
+    <option name="x" value="753" />
+    <option name="y" value="60" />
     <option name="width" value="960" />
     <option name="height" value="1050" />
   </component>
@@ -85,6 +151,70 @@
               <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="export_parent" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -95,12 +225,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.157" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="settings.gitee" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.itcast.dao.cargo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\项目实战\SaaS-Export\export_parent\export_dao\src\main\resources\cn\itcast\dao\cargo" />
+      <recent name="E:\项目实战\SaaS-Export\export_parent\export_domain\src\main\java\cn\itcast\domain\cargo" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -114,7 +254,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.p-stat">
+  <component name="RunManager" selected="Tomcat Server.c-manager">
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings>
@@ -210,7 +350,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="c-manager" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.43" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="c-manager" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="tomcat8" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="export_web_manager:war exploded">
@@ -316,7 +456,7 @@
         </option>
       </method>
     </configuration>
-    <configuration name="c-portal" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.43" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="c-portal" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="tomcat8" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="export_web_portal:war exploded">
@@ -423,7 +563,7 @@
         </option>
       </method>
     </configuration>
-    <configuration name="p-cargo" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.43" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="p-cargo" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="tomcat8" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="export_cargo_service:war exploded">
@@ -530,7 +670,7 @@
         </option>
       </method>
     </configuration>
-    <configuration name="p-company" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.43" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="p-company" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="tomcat8" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="export_company_service:war exploded">
@@ -637,7 +777,7 @@
         </option>
       </method>
     </configuration>
-    <configuration name="p-stat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.43" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="p-stat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="tomcat8" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="export_stat_service:war exploded">
@@ -753,7 +893,7 @@
     </list>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\bgp\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -765,22 +905,40 @@
       <workItem from="1574348091053" duration="556000" />
       <workItem from="1574351145372" duration="283000" />
       <workItem from="1574354808040" duration="36000" />
+      <workItem from="1574387869797" duration="79000" />
+      <workItem from="1574388015454" duration="1967000" />
+      <workItem from="1574390112633" duration="7388000" />
     </task>
+    <task id="LOCAL-00001" summary="默认更改列表">
+      <created>1574392989993</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574392989993</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="875000" />
+    <option name="totallyTimeSpent" value="10309000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17167382" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25777063" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="JRebel" order="2" side_tool="true" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="设计器" order="5" />
       <window_info id="Web" order="6" side_tool="true" />
+      <window_info id="Designer" order="7" />
+      <window_info id="Image Layers" order="8" />
+      <window_info id="Capture Tool" order="9" />
+      <window_info anchor="bottom" id="Messages" weight="0.32912844" />
+      <window_info active="true" anchor="bottom" id="GitHub Pull Requests" weight="0.32912844" />
+      <window_info anchor="bottom" id="Problems" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32964602" />
@@ -795,19 +953,22 @@
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="14" visible="true" weight="0.32964602" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.3233945" />
       <window_info anchor="bottom" id="MyBatis Log" order="15" />
-      <window_info anchor="bottom" id="JRebel Executor" order="16" />
-      <window_info anchor="bottom" id="JRebel Console" order="17" side_tool="true" />
+      <window_info anchor="bottom" id="JRebel Executor" order="16" weight="0.3440367" />
+      <window_info anchor="bottom" id="JRebel Console" order="17" side_tool="true" weight="0.32912844" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.16630901" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.3478028" />
       <window_info anchor="right" id="RestServices" order="4" />
       <window_info anchor="right" id="调色板" order="5" />
       <window_info anchor="right" id="Word Book" order="6" side_tool="true" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Palette" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="10" />
+      <window_info anchor="right" id="Theme Preview" order="11" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -853,6 +1014,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="默认更改列表" />
+    <option name="LAST_COMMIT_MESSAGE" value="默认更改列表" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/export_web_portal/src/main/java/cn/itcast/web/controller/ApplyController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -894,13 +1059,6 @@
     <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/resources/jasperreports_extension.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/export_generator/src/main/resources/mybatis-generator.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/export_generator/src/test/java/com/itheima/mybatis/MybatisGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-133">
@@ -908,24 +1066,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/export_dao/src/main/resources/spring/applicationContext-dao.xml">
+    <entry file="file://$PROJECT_DIR$/export_dao/src/main/resources/rebel.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="15" column="78" lean-forward="true" selection-start-line="15" selection-start-column="78" selection-end-line="15" selection-end-column="78" />
-          <folding>
-            <element signature="e#1299#1312#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-2349" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6788">
+          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_generator/src/main/resources/mybatis-generator.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="742">
+          <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_company_service/src/main/resources/spring/applicationContext-dubbo.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="11" column="72" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_service_system/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3132" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_domain/src/main/java/cn/itcast/domain/cargo/ExtCproductExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_domain/src/main/java/cn/itcast/domain/cargo/ShippingOrderExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_domain/src/main/java/cn/itcast/domain/cargo/ExportProductExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1363">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/export_dao/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/export_dao/src/main/resources/rebel.xml">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-174" />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/export_dao/src/main/resources/properties/db.properties">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_dao/src/main/resources/cn/itcast/dao/cargo/ShippingOrderDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="394" column="35" selection-start-line="394" selection-start-column="35" selection-end-line="394" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_dao/src/main/resources/spring/applicationContext-dao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_dao/src/main/java/cn/itcast/dao/cargo/ShippingOrderDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="16" column="46" lean-forward="true" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_domain/src/main/java/cn/itcast/domain/cargo/ShippingOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3132">
+          <caret line="309" column="47" selection-start-line="309" selection-start-column="47" selection-end-line="309" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_dao/src/main/java/cn/itcast/dao/cargo/ContractDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_service_system/src/main/java/cn/itcast/service/company/impl/CompanyServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-116">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_service_system/src/main/java/cn/itcast/service/company/CompanyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
@@ -957,7 +1221,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited>JRebel</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -993,6 +1257,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
+          <last-edited>export_cargo_interface</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

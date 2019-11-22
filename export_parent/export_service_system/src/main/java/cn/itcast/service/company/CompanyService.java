@@ -12,7 +12,7 @@ public interface CompanyService {
     //查询所有企业
     List<Company> findAll();
 
-    //保存企业信息
+    //保存企业信息1
     void save(Company company);
 
     //通过id查询企业信息
