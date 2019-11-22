@@ -15,16 +15,16 @@
     <!--</exportFonts>-->
     <!--–>-->
     <!--</fontFamily>-->
-    <fontFamily name="华文宋体">
-        <normal>stsong/stsong.TTF</normal>
-        <bold>stsong/stsong.TTF</bold>
-        <italic>stsong/stsong.TTF</italic>
-        <boldItalic>stsong/stsong.TTF</boldItalic>
+    <fontFamily name="楷体">
+        <normal>stsong/simkai.ttf</normal>
+        <bold>stsong/simkai.ttf</bold>
+        <italic>stsong/simkai.ttf</italic>
+        <boldItalic>stsong/simkai.ttf</boldItalic>
         <pdfEncoding>Identity-H</pdfEncoding>
         <pdfEmbedded>true</pdfEmbedded>
         <exportFonts>
-            <export key="net.sf.jasperreports.html">'华文宋体', Arial, Helvetica, sans-serif</export>
-            <export key="net.sf.jasperreports.xhtml">'华文宋体', Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.html">'楷体', Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.xhtml">'楷体', Arial, Helvetica, sans-serif</export>
         </exportFonts>
         <!--
         <locales>

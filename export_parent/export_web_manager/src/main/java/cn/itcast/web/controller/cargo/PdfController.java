@@ -165,4 +165,29 @@ public class PdfController extends BaseController{
         //3、通过JasperExportManager管理器输出pdf文件
         JasperExportManager.exportReportToPdfStream(jasperPrint, response.getOutputStream());
     }
+	/**
+     * 进行电子报运单的pdf下载
+     */
+    @RequestMapping("/shipingPdf")
+    public void shipingPdf(String shippingOrderId) throws Exception {
+        //0.先查询委托单数据;
+        ShippingOrder shippingOrder = shippingOrderService.findById(shippingOrderId);
+
+        //1.加载pdf模板;(通过session找到模板在项目中的路径);
+        String path = session.getServletContext().getRealPath("/") + "/jasper/shipping.jasper";
+        //2.填充数据(需要三个参数);
+           /* 参数一:模板路径;
+            参数二:需要填充到模板中的数据的类型;
+            参数三:(jasper中的数据源):需要填充到模板中的list集合类型的数据;*/
+        //使用工具类完成shippingOrder对象放入map集合
+        Map<String, Object> map = BeanMapUtils.beanToMap(shippingOrder);
+        //传递对象集合的dataSource,使用JRBeanCollectionDataSource
+        //JRBeanCollectionDataSource datasource = new JRBeanCollectionDataSource(eplist);
+        JasperPrint jp = JasperFillManager.fillReport(path, map, new JREmptyDataSource());
+        //3.输出pdf文件(预览/下载)需要两个参数;
+//            参数一:jasperprint对象;
+//            参数二:outputStream对象;
+        JasperExportManager.exportReportToPdfStream(jp, response.getOutputStream());
+
+    }
 }
