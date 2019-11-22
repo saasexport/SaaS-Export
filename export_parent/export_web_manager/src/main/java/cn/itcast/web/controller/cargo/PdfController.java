@@ -5,9 +5,11 @@ import cn.itcast.dao.cargo.ExportDao;
 import cn.itcast.domain.cargo.Export;
 import cn.itcast.domain.cargo.ExportProduct;
 import cn.itcast.domain.cargo.ExportProductExample;
+import cn.itcast.domain.cargo.ShippingOrder;
 import cn.itcast.domain.system.User;
 import cn.itcast.service.cargo.ExportProductService;
 import cn.itcast.service.cargo.ExportService;
+import cn.itcast.service.cargo.ShippingOrderService;
 import cn.itcast.web.controller.BaseController;
 import com.alibaba.dubbo.config.annotation.Reference;
 import net.sf.jasperreports.engine.*;
@@ -24,7 +26,8 @@ public class PdfController extends BaseController{
 
     @Reference
     private ExportService exportService;
-
+    @Reference
+    private ShippingOrderService shippingOrderService;
     @Reference
     private ExportProductService exportProductService;
 
