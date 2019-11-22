@@ -18,7 +18,7 @@ public interface ShippingOrderDao {
     List<ShippingOrder> selectByExample(ShippingOrderExample example);
     //查询委托单列表
     ShippingOrder selectByPrimaryKey(String shippingOrderId);
-    //更新委托单信息
+    //更新委托单信息22
     int updateByPrimaryKeySelective(ShippingOrder record);
 
 }
