@@ -80,4 +80,7 @@
     <select id="findByEmail" parameterType="string" resultMap="BaseResultMap">
         SELECT * FROM pe_user WHERE email = #{email}
     </select>
+    <select id="findSaasEmail" resultType="java.lang.String">
+        select email from pe_user where degree=#{degree}
+    </select>
 </mapper>

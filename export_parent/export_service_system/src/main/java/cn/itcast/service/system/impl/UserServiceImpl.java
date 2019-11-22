@@ -54,4 +54,8 @@ public class UserServiceImpl implements UserService{
     public User findByEmail(String email) {
         return userDao.findByEmail(email);
     }
+
+    public String findSaasEmail(int degree) {
+        return userDao.findSaasEmail(degree);
+    }
 }
