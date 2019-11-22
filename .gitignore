@@ -1,4 +1,4 @@
-﻿.settings
+.settings
 *.class
 
 #huojian
@@ -41,9 +41,16 @@ release.properties
 .idea/
 out/
 
+target
 # Mac
 .DS_Store
 
+.settings
+.project
+.classpath	
+*.class
+.idea
+rebel.xml
 # gitignore
 .gitignore
 .idea
