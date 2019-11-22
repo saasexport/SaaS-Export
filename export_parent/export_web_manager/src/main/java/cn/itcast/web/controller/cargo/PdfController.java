@@ -39,7 +39,7 @@ public class PdfController extends BaseController{
             User user = new User();
             user.setUserName("林"+i);
             user.setId(String.valueOf(i));
-            user.setDeptName("开发部");
+            user.setDeptName("开发部1");
             user.setEmail("mail.16"+i+".com");
             list.add(user);
         }
