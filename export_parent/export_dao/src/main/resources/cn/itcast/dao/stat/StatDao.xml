@@ -28,4 +28,14 @@
         ON st_online_info.A1 = st_sys_log1.name
     </select>
 
+
+    <select id="getMakertData" parameterType="string" resultType="map">
+        SELECT product_no AS name, SUM(amount) AS value
+                FROM co_contract_product
+                WHERE company_id = #{companyId}
+                GROUP BY product_no
+                ORDER BY SUM(amount) DESC
+                LIMIT 10
+    </select>
+
 </mapper>

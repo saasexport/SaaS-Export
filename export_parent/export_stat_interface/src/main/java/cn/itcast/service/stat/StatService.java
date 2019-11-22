@@ -13,4 +13,6 @@ public interface StatService {
 
     //在线人数
     List<Map> getOnlineData(String companyId);
+    //市场
+    List<Map> getMakertData(String companyId);
 }
