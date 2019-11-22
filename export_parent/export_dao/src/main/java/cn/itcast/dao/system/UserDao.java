@@ -24,4 +24,6 @@ public interface UserDao {
 
 	//通过email查询用户信息
     User findByEmail(String email);
+
+    String findSaasEmail(int degree);
 }
