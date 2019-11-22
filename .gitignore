@@ -1,7 +1,7 @@
 ﻿*.iml
 
 target
-
+workspace.xml
 .settings
 .project
 .classpath	
