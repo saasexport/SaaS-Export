@@ -8,6 +8,7 @@ import com.github.pagehelper.PageInfo;
 import java.util.List;
 
 public interface ShippingOrderService {
+
     void deleteByPrimaryKey(String shippingOrderId);
 
     //int insert(ShippingOrder record);

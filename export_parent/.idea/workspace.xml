@@ -7,24 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39b45bd0-1096-401a-941e-a75b2a988d76" name="默认更改列表" comment="默认更改列表">
-      <change afterPath="$PROJECT_DIR$/.idea/export_parent.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_cargo_interface/export_cargo_interface.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_cargo_service/export_cargo_service.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_common/export_common.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_company_interface/export_company_interface.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_company_service/export_company_service.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_dao/export_dao.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_domain/export_domain.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_service_system/export_service_system.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_stat_interface/export_stat_interface.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_stat_service/export_stat_service.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_web_manager/export_web_manager.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export_web_portal/export_web_portal.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2019.11.22-10.08推送测试.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export_dao/src/main/resources/properties/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/export_dao/src/main/resources/properties/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export_service_system/src/main/java/cn/itcast/service/company/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/export_service_system/src/main/java/cn/itcast/service/company/CompanyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_cargo_service/export_cargo_service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/export_cargo_service/export_cargo_service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_common/export_common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/export_common/export_common.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_company_interface/export_company_interface.iml" beforeDir="false" afterPath="$PROJECT_DIR$/export_company_interface/export_company_interface.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_company_service/export_company_service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/export_company_service/export_company_service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_dao/export_dao.iml" beforeDir="false" afterPath="$PROJECT_DIR$/export_dao/export_dao.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_domain/export_domain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/export_domain/export_domain.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_service_system/export_service_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/export_service_system/export_service_system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_stat_interface/export_stat_interface.iml" beforeDir="false" afterPath="$PROJECT_DIR$/export_stat_interface/export_stat_interface.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_stat_service/export_stat_service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/export_stat_service/export_stat_service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_web_manager/export_web_manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/export_web_manager/export_web_manager.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_web_portal/export_web_portal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/export_web_portal/export_web_portal.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -56,10 +50,13 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/export_service_system/src/main/java/cn/itcast/service/company/CompanyService.java">
+        <entry file="file://$PROJECT_DIR$/export_cargo_interface/src/main/java/cn/itcast/service/cargo/ShippingOrderService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="346">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,6 +89,7 @@
         <option value="$PROJECT_DIR$/export_dao/src/main/resources/properties/db.properties" />
         <option value="$PROJECT_DIR$/export_dao/src/main/java/cn/itcast/dao/cargo/ShippingOrderDao.java" />
         <option value="$PROJECT_DIR$/export_service_system/src/main/java/cn/itcast/service/company/CompanyService.java" />
+        <option value="$PROJECT_DIR$/export_cargo_interface/src/main/java/cn/itcast/service/cargo/ShippingOrderService.java" />
       </list>
     </option>
   </component>
@@ -131,8 +129,8 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="753" />
-    <option name="y" value="60" />
+    <option name="x" value="871" />
+    <option name="y" value="83" />
     <option name="width" value="960" />
     <option name="height" value="1050" />
   </component>
@@ -142,8 +140,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -154,25 +150,60 @@
             <path>
               <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
+              <item name="export_cargo_interface" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
+              <item name="export_cargo_interface" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
+              <item name="export_cargo_interface" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
+              <item name="export_cargo_interface" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_cargo_interface" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cargo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_cargo_service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_cargo_service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_cargo_service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_cargo_service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -180,45 +211,18 @@
             <path>
               <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
+              <item name="export_cargo_service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="export_service_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -226,6 +230,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -235,6 +245,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.itcast.service.cargo" />
       <recent name="cn.itcast.dao.cargo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -907,7 +918,9 @@
       <workItem from="1574354808040" duration="36000" />
       <workItem from="1574387869797" duration="79000" />
       <workItem from="1574388015454" duration="1967000" />
-      <workItem from="1574390112633" duration="7388000" />
+      <workItem from="1574390112633" duration="7612000" />
+      <workItem from="1574404190995" duration="501000" />
+      <workItem from="1574405080446" duration="2062000" />
     </task>
     <task id="LOCAL-00001" summary="默认更改列表">
       <created>1574392989993</created>
@@ -916,17 +929,31 @@
       <option name="project" value="LOCAL" />
       <updated>1574392989993</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="默认更改列表">
+      <created>1574404004181</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574404004181</updated>
+    </task>
+    <task id="LOCAL-00003" summary="默认更改列表">
+      <created>1574405752360</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574405752360</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10309000" />
+    <option name="totallyTimeSpent" value="13096000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25777063" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2642015" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="JRebel" order="2" side_tool="true" />
       <window_info id="UI Designer" order="3" />
@@ -936,9 +963,6 @@
       <window_info id="Designer" order="7" />
       <window_info id="Image Layers" order="8" />
       <window_info id="Capture Tool" order="9" />
-      <window_info anchor="bottom" id="Messages" weight="0.32912844" />
-      <window_info active="true" anchor="bottom" id="GitHub Pull Requests" weight="0.32912844" />
-      <window_info anchor="bottom" id="Problems" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32964602" />
@@ -955,8 +979,11 @@
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.3233945" />
       <window_info anchor="bottom" id="MyBatis Log" order="15" />
-      <window_info anchor="bottom" id="JRebel Executor" order="16" weight="0.3440367" />
+      <window_info active="true" anchor="bottom" id="JRebel Executor" order="16" visible="true" weight="0.3325688" />
       <window_info anchor="bottom" id="JRebel Console" order="17" side_tool="true" weight="0.32912844" />
+      <window_info active="true" anchor="bottom" id="GitHub Pull Requests" order="18" weight="0.32912844" />
+      <window_info anchor="bottom" id="Problems" order="19" />
+      <window_info anchor="bottom" id="Messages" order="20" weight="0.23394495" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1186,8 +1213,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/export_service_system/src/main/java/cn/itcast/service/company/CompanyService.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_service_system/export_service_system.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="12" column="97" lean-forward="true" selection-start-line="12" selection-start-column="97" selection-end-line="12" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_service_system/src/main/resources/rebel.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_cargo_interface/src/main/java/cn/itcast/service/cargo/ShippingOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
