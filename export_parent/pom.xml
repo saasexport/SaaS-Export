@@ -220,7 +220,6 @@
         </dependency>
 
 
-
         <!--activeMq-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
@@ -263,6 +262,18 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml-schemas</artifactId>
             <version>4.0.1</version>
+        </dependency>
+        <!--高策 11.23 14:10 聊天功能依赖 JavaEE api 8.0-->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
         </dependency>
     </dependencies>
 </project>
