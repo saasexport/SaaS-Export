@@ -35,15 +35,65 @@
 <script src="../../plugins/echarts/echarts.min.js"></script>
 <script type="text/javascript">
 
-    $.get("/stat/getMakertData.do", function (getMakertData) {
+    $.get("/stat/getMakertData.do",function (getMakertData) {
 
         var titles = [];
         var values = [];
+
+        for (var i = 0;i<getMakertData.length;i++){
+            titles[i]=getMakertData[i].name;
+            values[i]=getMakertData[i].value;
+        }
+
+        var myChart = echarts.init(document.getElementById('main'));
+
+
+        var option = {
+            angleAxis: {
+                type: 'category',
+                data: values,
+                z: 10
+            },
+            radiusAxis: {
+            },
+            polar: {
+            },
+            series: [{
+                type: 'bar',
+                data: values,
+                coordinateSystem: 'polar',
+                name: 'A',
+                stack: 'a'
+            }, {
+                type: 'bar',
+                data: titles,
+                coordinateSystem: 'polar',
+                name: 'B',
+                stack: 'a'
+            }, {
+                type: 'bar',
+                data: values,
+                coordinateSystem: 'polar',
+                name: 'C',
+                stack: 'a'
+            }],
+            legend: {
+                show: true,
+                data: ['A', 'B', 'C']
+            }
+        };
+
+        myChart.setOption(option);
+    })
+    /*$.get("/stat/getMakertData.do", function (getMakertData) {
+
+        var titles = [];
+        var values = [];
+
         for (var i=0; i<getMakertData.length; i++){
             titles[i] = getMakertData[i].name;
             values[i] = getMakertData[i].value;
         }
-
 
         var myChart = echarts.init(document.getElementById('main'));
 
@@ -63,10 +113,9 @@
                 type: 'bar'
             }]
         };
-
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
-    })
+    })*/
 </script>
 
 </html>
