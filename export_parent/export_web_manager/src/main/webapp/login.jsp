@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html>
 
@@ -55,13 +55,29 @@
             <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-qq"></i> 腾讯QQ用户登录</a>
             <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-weixin"></i> 微信用户登录</a>
         </div>
+
+        <div id="login_container"></div>
+
     </div>
 </div>
 <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="../plugins/iCheck/icheck.min.js"></script>
+
+<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 <script>
-    $(function() {
+    var obj = new WxLogin({
+        self_redirect:false,
+        id:"login_container",
+        appid: "wx3bdb1192c22883f3",
+        scope: "snsapi_login",
+        redirect_uri: "http://note.java.itcast.cn/weiXinLogin.do"
+    });
+</script>
+
+
+<script>
+    $(function () {
         $('input').iCheck({
             checkboxClass: 'icheckbox_square-blue',
             radioClass: 'iradio_square-blue',

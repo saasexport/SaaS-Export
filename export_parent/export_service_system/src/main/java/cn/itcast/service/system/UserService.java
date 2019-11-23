@@ -29,4 +29,8 @@ public interface UserService {
     User findByEmail(String email);
 
    String findSaasEmail(int degree);
+
+    User findByOpenId(String openId);
+
+    void AddOpenId(String openId, String email);
 }

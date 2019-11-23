@@ -67,8 +67,10 @@ public class AuthRealm extends AuthorizingRealm {
         // Object principal 安全数据，User
         // Object credentials 用户的数据库密码
         // String realmName 可以随意取名，但是我们一般用类名
-        AuthenticationInfo info = new SimpleAuthenticationInfo(user, user.getPassword(), this.getName());
-        //4、返回AuthenticationInfo
-        return info;
+        if (user != null) {
+            return new SimpleAuthenticationInfo(user, user.getPassword(), this.getName());
+        } else {
+            return null;
+        }
     }
 }

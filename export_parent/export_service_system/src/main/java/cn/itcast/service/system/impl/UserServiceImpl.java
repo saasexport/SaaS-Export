@@ -58,4 +58,18 @@ public class UserServiceImpl implements UserService{
     public String findSaasEmail(int degree) {
         return userDao.findSaasEmail(degree);
     }
+
+    public User findByOpenId(String openId) {
+        User user = null;
+        try {
+            user = userDao.findByOpenId(openId);
+            return user;
+        } catch (Exception e) {
+            return user;
+        }
+    }
+
+    public void AddOpenId(String openId, String email) {
+        userDao.addOpenId(openId, email);
+    }
 }

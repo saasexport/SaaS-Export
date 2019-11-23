@@ -22,6 +22,7 @@
         <result column="degree" property="degree"/>
         <result column="remark" property="remark"/>
         <result column="order_no" property="orderNo"/>
+        <result column="openId" property="openId"/>
     </resultMap>
 
     <!--根据企业id查询全部-->
@@ -45,13 +46,17 @@
         dept_id, dept_name,
         email, user_name, password, state, company_id,
         company_name, manager_id, join_date, salary, birthday,
-        gender, station, telephone, degree, remark, order_no)
+        gender, station, telephone, degree, remark, order_no,openId)
         values (#{id},
         #{deptId}, #{deptName},
         #{email}, #{userName}, #{password}, #{state}, #{companyId},
         #{companyName},  #{managerId}, #{joinDate}, #{salary}, #{birthday},
-        #{gender}, #{station}, #{telephone}, #{degree}, #{remark}, #{orderNo})
+        #{gender}, #{station}, #{telephone}, #{degree}, #{remark}, #{orderNo},#{openId})
     </insert>
+
+    <update id="addOpenId">
+        update pe_user set openId = #{openId} where email = #{email}
+    </update>
 
     <!--更新-->
     <update id="update" parameterType="cn.itcast.domain.system.User">
@@ -73,7 +78,8 @@
         telephone = #{telephone},
         degree = #{degree},
         remark = #{remark},
-        order_no = #{orderNo}
+        order_no = #{orderNo},
+        openId=#{openId}
         where user_id = #{id}
     </update>
     
@@ -82,5 +88,8 @@
     </select>
     <select id="findSaasEmail" resultType="java.lang.String">
         select email from pe_user where degree=#{degree}
+    </select>
+    <select id="findByOpenId" resultMap="BaseResultMap">
+        select * from pe_user where openId = #{openId}
     </select>
 </mapper>

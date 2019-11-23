@@ -1,82 +1,109 @@
 package cn.itcast.domain.system;
+
 //TODO 优先级:高 需要修改添加两个字段
 public class User {
-    /** 
-     */ 
+    //微信登录使用的两个字段(高策)
+    private String openId;//微信用户的唯一标识
+
+    public String getOpenId() {
+        return openId;
+    }
+
+    public void setOpenId(String openId) {
+        this.openId = openId;
+    }
+
+    //  修改结束
+
+    /**
+     *
+     */
     private String id;
 
-    /** 
-     */ 
+    /**
+     *
+     */
     private String deptId;
-	
-	/** 
-     */ 
+
+    /**
+     *
+     */
     private String deptName;
 
-    /** 
-     */ 
+    /**
+     *
+     */
     private String email;
 
-    /** 
+    /**
      * 用户名
-     */ 
+     */
     private String userName;
 
-    /** 
+    /**
      * shiro MD5密码32位
-     */ 
+     */
     private String password;
 
-    /** 
+    /**
      * 1启用0停用
-     */ 
+     */
     private Integer state;
 
 
-    /** 
-     */ 
+    /**
+     *
+     */
     private String managerId;
 
-    /** 
-     */ 
+    /**
+     *
+     */
     private String joinDate;
 
-    /** 
-     */ 
+    /**
+     *
+     */
     private Double salary;
 
-    /** 
-     */ 
+    /**
+     *
+     */
     private String birthday;
 
-    /** 
-     */ 
+    /**
+     *
+     */
     private String gender;
 
-    /** 
-     */ 
+    /**
+     *
+     */
     private String station;
 
-    /** 
-     */ 
+    /**
+     *
+     */
     private String telephone;
 
     /**
      * 0作为内部控制，租户企业不能使用
-     *      0-saas管理员
-     *      1-企业管理员
-     *      2-管理所有下属部门和人员
-     *      3-管理本部门
-     *      4-普通员工
-     */ 
+     * 0-saas管理员
+     * 1-企业管理员
+     * 2-管理所有下属部门和人员
+     * 3-管理本部门
+     * 4-普通员工
+     */
     private Integer degree;
 
-    /** 
-     */ 
+    /**
+     *
+     */
     private String remark;
 
-    /** 
-     */ 
+    /**
+     *
+     */
     private Integer orderNo;
 
     private String companyId;
@@ -145,6 +172,7 @@ public class User {
     public void setManagerId(String managerId) {
         this.managerId = managerId;
     }
+
     public Double getSalary() {
         return salary;
     }
@@ -218,19 +246,19 @@ public class User {
         this.birthday = birthday;
     }
 
-	public String getCompanyId() {
-		return companyId;
-	}
+    public String getCompanyId() {
+        return companyId;
+    }
 
-	public void setCompanyId(String companyId) {
-		this.companyId = companyId;
-	}
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
+    }
 
-	public String getCompanyName() {
-		return companyName;
-	}
+    public String getCompanyName() {
+        return companyName;
+    }
 
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
 }

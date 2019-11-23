@@ -71,6 +71,10 @@
                         /userLogin.jsp* = anon
 
                 -->
+                /weiXinLogin* = anon
+                /weiXinLogin.jsp* = anon
+                /firstLogin* = anon
+
                 /index.jsp* = anon
                 /login.jsp* = anon
                 /login* = anon
