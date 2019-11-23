@@ -8,6 +8,7 @@
 <%--<script src="/plugins/bootstrap/js/bootstrap.min.js"></script>--%>
 
 <header class="main-header">
+
     <a href="all-admin-index.html" class="logo">
         <span class="logo-mini"><img src="../img/logo.png"></span>
         <span class="logo-lg">
@@ -103,29 +104,28 @@
                         <span class="label label-warning">10</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="header">你有10个新消息</li>
+                        <li class="header" id="msg">你有1个新消息</li>
                         <li>
                             <!-- inner menu: contains the actual data -->
                             <ul class="menu">
                                 <li>
-                                    <a href="#">
-                                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                    <a href="${pageContext.request.contextPath}/system/feedback/changeState.do" id="skipList" onclick="changeState()">
+                                    <i class="fa fa-warning text-yellow"></i> 点击查看今天的新消息
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-warning text-yellow"></i> Very long description here that may not
-                                        fit into the page and may cause design problems
+                                        <i class="fa fa-warning text-yellow"></i> 有待挖掘，不会用
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-users text-red"></i> 5 new members joined
+                                        <i class="fa fa-users text-red"></i> 这个选项是摆设
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                                        <i class="fa fa-shopping-cart text-green"></i> 用不到这么多颜色滚
                                     </a>
                                 </li>
                                 <li>

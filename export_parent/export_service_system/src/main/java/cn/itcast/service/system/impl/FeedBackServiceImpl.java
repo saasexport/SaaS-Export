@@ -61,4 +61,10 @@ public class FeedBackServiceImpl implements FeedBackService {
         feedBackDao.updateByPrimaryKeySelective(feedBack);
 
     }
+
+    public List<FeedBack> findByState(FeedBackExample feedBackExample) {
+
+
+        return feedBackDao.selectByExample(feedBackExample);
+    }
 }

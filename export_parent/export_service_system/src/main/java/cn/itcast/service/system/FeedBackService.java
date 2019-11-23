@@ -30,4 +30,6 @@ public interface FeedBackService {
     FeedBack findById(String id);
 
     void updateFeedback(FeedBack feedBack);
+
+    List<FeedBack> findByState(FeedBackExample feedBackExample);
 }

@@ -9,8 +9,10 @@ import cn.itcast.web.controller.BaseController;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -114,4 +116,24 @@ public class feedbackController extends BaseController {
         return "redirect:/system/feedback/list.do";
     }
 
+
+    @RequestMapping(value = "/remind", name = "反馈消息提醒")
+    public @ResponseBody int remind() {
+
+        FeedBackExample feedBackExample = new FeedBackExample();
+        FeedBackExample.Criteria criteria = feedBackExample.createCriteria();
+        criteria.andStateEqualTo("0");
+        List<FeedBack> feedBacks = feedBackService.findByState(feedBackExample);
+//
+//        String num = String.valueOf(feedBacks.size());
+
+        return feedBacks.size();
+    }
+
+    @RequestMapping(value = "/changeState",name = "反馈提醒的跳转")
+    public String changeState(){
+
+
+        return "redirect:/system/feedback/list.do";
+    }
 }

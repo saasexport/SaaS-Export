@@ -1,7 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="../../base.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ include file="../../base.jsp"%>
 
 <!DOCTYPE html>
 <html>
@@ -49,7 +50,7 @@
         <!-- .box-body -->
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">列表</h3>
+                <h3 class="box-title">反馈列表</h3>
             </div>
 
             <div class="box-body">
@@ -63,7 +64,8 @@
                             <div class="btn-group">
                                 <c:if test="${loginUser.degree!=0}">
                                     <button type="button" class="btn btn-default" title="新建"
-                                            onclick='location.href="/system/feedback/toAdd.do"'><i class="fa fa-file-o"></i>
+                                            onclick='location.href="/system/feedback/toAdd.do"'><i
+                                            class="fa fa-file-o"></i>
                                         新建
                                     </button>
                                     <button type="button" class="btn btn-default" title="删除" onclick='deleteById()'><i
@@ -106,10 +108,11 @@
                         <c:forEach items="${page.list}" var="item">
                             <tr>
                                 <td><input name="ids" value="${item.feedbackId}" type="checkbox"></td>
-                                <td>
+                                <%--<td>
 
-                                    ${item.inputTime}
-                                </td>
+                                        ${item.inputTime}
+                                </td>--%>
+                                <td><fmt:formatDate  value="${item.inputTime}" pattern="yyyy-MM-dd"/></td>
 
 
                                 <c:if test="${item.classType==1}">
@@ -165,5 +168,10 @@
     </section>
 </div>
 </body>
-
+<script>
+    $('#inputTime').datepicker({
+        autoclose: true,
+        format: 'yyyy-mm-dd'
+    });
+</script>
 </html>
