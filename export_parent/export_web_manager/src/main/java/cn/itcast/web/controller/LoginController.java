@@ -1,6 +1,7 @@
 package cn.itcast.web.controller;
 
 
+import cn.itcast.common.utils.Encrypt;
 import cn.itcast.domain.system.Module;
 import cn.itcast.domain.system.User;
 import cn.itcast.service.system.ModuleService;
@@ -12,6 +13,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Enumeration;
 import java.util.List;
@@ -120,4 +122,20 @@ public class LoginController extends BaseController{
     public String home(){
 	    return "home/home";
     }
+
+    @RequestMapping("/changePassword")
+    public @ResponseBody int changePassword(String oldPassword, String newPassword) {
+        User user = getLoginUser();
+        oldPassword = Encrypt.md5(oldPassword, user.getEmail());
+        if (oldPassword.equals(user.getPassword())) {
+            //1代表密码正确,然后更新密码
+            user.setPassword(newPassword);
+            userService.update(user);
+            return 1;
+        } else {
+            return 0;
+        }
+
+    }
+
 }

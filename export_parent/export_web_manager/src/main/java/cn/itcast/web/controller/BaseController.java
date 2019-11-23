@@ -31,4 +31,12 @@ public class BaseController {
             this.companyName = user.getCompanyName();
         }
     }
+    protected User getLoginUser() {
+        Object obj = session.getAttribute("loginUser");
+        if (obj != null) {
+            User user = (User) obj;
+            return user;
+        }
+        return null;
+    }
 }
