@@ -1,5 +1,7 @@
 package cn.itcast.web.controller.cargo;
 
+import cn.itcast.common.utils.MailUtil;
+import cn.itcast.common.utils.MailUtils;
 import cn.itcast.domain.cargo.PackingList;
 import cn.itcast.domain.cargo.PackingListExample;
 import cn.itcast.domain.cargo.ShippingOrder;
@@ -89,8 +91,7 @@ public class ShippingOrderController extends BaseController {
      */
     @RequestMapping("/edit")
     public String edit(ShippingOrder shippingOrder, String PackingListId) {
-        //System.out.println("aaaaaaaaaa"+shippingOrder);
-        //System.out.println("aaaaaaaaaa"+PackingListId);
+
         shippingOrder.setCompanyId(companyId);
         shippingOrder.setCompanyName(companyName);
         if (StringUtils.isEmpty(shippingOrder.getShippingOrderId())) {
@@ -100,6 +101,21 @@ public class ShippingOrderController extends BaseController {
             shippingOrder.setShippingOrderId(PackingListId);
             //为空,就是正在进行保存
             shippingOrderService.save(shippingOrder);
+            //发送邮件start
+            if(shippingOrder.getOrderType()=="SEA"||shippingOrder.getOrderType()=="AIR"){
+                shippingOrder.setOrderType("船运");
+            }else {
+                shippingOrder.setOrderType("空运");
+            }
+            try {
+                MailUtils.sendMsg("1721536603@qq.com", "*****您的委托单已生成*****\n",
+                        "\n*****委托单id:*****"+shippingOrder.getShippingOrderId()+"\n*****运输方式*****\n"+shippingOrder.getOrderType()
+                                +"\n*****货主*****\n"+shippingOrder.getShipper()+"\n*****卸货港*****\n"+shippingOrder.getPortOfDischarge()
+                                );
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            //发送邮件end
             PackingList packingList = new PackingList();
             packingList.setPackingListId(PackingListId);
             packingList.setState(3);
@@ -166,50 +182,6 @@ public class ShippingOrderController extends BaseController {
         shippingOrderService.update(shippingOrder);
         return "redirect:/cargo/shipping/list.do";
     }
-
-    /**
-     * exportE点击电子报运
-     * 参数:报运单id
-     */
-    /*@RequestMapping("/exportE")
-    public String exportE(String id){
-        //1.根据报运单id查询报运单对象;
-        Export export = exportService.findById(id);
-        //2.根据报运单id查询报运单对应的商品类对象;
-        ExportProductExample epExample = new ExportProductExample();
-        ExportProductExample.Criteria epcriteria = epExample.createCriteria();
-        epcriteria.andExportIdEqualTo(id);
-        List<ExportProduct> eps = exportProductService.findAll(epExample);
-        //3.创建海关报运的报运单对象;
-        ExportVo exportVo = new ExportVo();
-        //4.将自己的报运单对象封装到海关报运单中;同名参数使用工具类copy,id进行set方法;
-        BeanUtils.copyProperties(export,exportVo);
-        exportVo.setExportId(id);
-        //5.创建海关报运商品对象集合;
-        List<ExportProductVo> epsV=new ArrayList<ExportProductVo>();
-        //6.将自己的商品对象循环封装到海关报运商品对象中;同名参数使用工具类copy,报运单id和商品id进行set方法;
-        for (ExportProduct ep : eps) {
-            ExportProductVo epV = new ExportProductVo();
-            BeanUtils.copyProperties(ep,epV);
-            epV.setExportId(id);
-            epV.setExportProductId(ep.getId());
-            epsV.add(epV);
-        }
-        //7.将海关报运商品对象放入海关报运对象中;
-        exportVo.setProducts(epsV);
-        //8.通过工具类请求路径,再用post方式将海关报运对象传过去;
-        WebClient webClient=WebClient.create("http://localhost:8080/jk_export_war/ws/export/user");
-        webClient.post(exportVo);
-        export.setState(3);//已发送
-        exportService.update(export);
-       9.通过工具类请求路径,携带参数,再用get方法接收海关回传的数据(1.报运是否成功;2.税金);
-        webClient = WebClient.create("http://localhost:8080/jk_export_war/ws/export/user/" + id);
-        ExportResult result = webClient.get(ExportResult.class);
-        //System.out.println("---"+result.getProducts().size());
-        //10.调用自己写的service方法进行修改报运单状态,修改税金;
-        exportService.updateExportResult(result);*//*
-        return "redirect:/cargo/export/list.do";
-    }*/
     @RequestMapping("/delete")
     public String delete(String shippingOrderId) {
         shippingOrderService.delete(shippingOrderId);

@@ -147,10 +147,14 @@
                             <div class="radio"><label><input type="radio" disabled ${shippingOrder.state==1?'checked':''} name="state" value="1">已上报</label></div>
                         </div>
                     </div>
+                    <div class="col-md-2 title">收货邮箱</div>
+                    <div class="col-md-4 data">
+                        <input type="text" class="form-control"   placeholder="收货邮箱" name="email" value="1721536603@qq.com" disabled="disabled" ></input>
+                    </div>
 
-                    <div class="col-md-2 title rowHeight2x">提要说明</div>
-                    <div class="col-md-4 data  rowHeight2x">
-                        <textarea class="form-control" rows="3" placeholder="提要说明" name="remark">${shippingOrder.remark}</textarea>
+                    <div class="col-md-2 title">提要说明</div>
+                    <div class="col-md-4 data">
+                        <input type="text" class="form-control"  placeholder="提要说明" name="remark">${shippingOrder.remark}</input>
                     </div>
 
                     <div class="col-md-2 title">运输要求</div>
