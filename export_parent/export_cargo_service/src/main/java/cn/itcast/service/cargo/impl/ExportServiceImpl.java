@@ -168,4 +168,8 @@ public class ExportServiceImpl implements ExportService{
             exportProductDao.updateByPrimaryKeySelective(ep);
         }
     }
+
+    public List<Export> findStateExport(ExportExample exportExample) {
+        return exportDao.selectByExample(exportExample);
+    }
 }
