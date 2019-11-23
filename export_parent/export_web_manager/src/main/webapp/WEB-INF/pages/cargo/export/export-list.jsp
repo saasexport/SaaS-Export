@@ -142,7 +142,6 @@
                                 <c:if test="${o.state==4}"><font color="red">发票</font></c:if>
                                 <c:if test="${o.state==5}"><font color="red">财务</font></c:if>
                                 <c:if test="${o.state==6}"><font color="red">已审核</font></c:if>
-
                             </td>
                             <td>
                                 <a href="${ctx }/cargo/export/toView.do?id=${o.id}">[查看]</a>
