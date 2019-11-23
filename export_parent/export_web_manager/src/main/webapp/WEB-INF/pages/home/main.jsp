@@ -84,7 +84,8 @@
     function setIframeHeight(iframe) {
         if (iframe) {
             var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
-            var height = iframeWin.document.getElementById('frameContent').scrollHeight +20 ;
+            var height = 800;
+            // var height = iframeWin.document.getElementById('frameContent').scrollHeight +80 ;
             iframe.height =height;
         }
     };
