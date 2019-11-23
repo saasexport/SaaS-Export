@@ -1,11 +1,71 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" language="java" %>
 <%@ include file="../base.jsp"%>
-<!‐‐ 1. 导入bootstrap中的css样式文件 ‐‐>
+
 <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<!‐‐ 2. 导入jQuery框架 ‐‐>
+
 <script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!‐‐ 3. 导入bootstrap的js文件 ‐‐>
-<%--<script src="/plugins/bootstrap/js/bootstrap.min.js"></script>--%>
+
+<script>
+    $(function () {
+        //这块是反馈相关
+        var degree= ${loginUser.degree}
+        if(degree==0){
+            var url="system/feedback/remind.do"
+            $.get(url,function(data){
+
+                $("#remind").html(data);
+                $("#msg").html("你有"+data+"个新反馈");
+                $("#skipList").text("点击查看待处理反馈")
+            })
+        }
+
+        //这块是消息相关
+        var url="system/chat/msgNumber.do";
+        $.get(url,function(data){
+            $("#msgNumber").html(data)
+        })
+
+
+
+
+        $("#recipient-name").blur(
+            function () {
+                if ($("#recipient-name").val()!=$("#newPassword").val()){
+                    alert("两次密码不一致!")
+                }
+
+            }
+        )
+
+        $("#save").click(function(){
+            //alert(1)
+            var oldPassword=$("#oldPassword").val();
+            var newPassword=$("#newPassword").val();
+            var url="changePassword.do";
+            var data = {"oldPassword":oldPassword,"newPassword":newPassword};
+            $.post(url,data,function(d){
+                if(d==1){
+                    $("#close").click();
+                    alert("密码修改成功!")
+                    window.location.href = "login.do";
+                }else {
+                    alert("旧密码输入错误!")
+                }
+            })
+        });
+
+
+    })
+
+    /* function changeState() {
+         //alert(1)
+
+     }*/
+
+</script>
+
+
+
 
 <header class="main-header">
 
@@ -249,7 +309,7 @@
 
                         <li class="user-footer">
                             <div class="pull-left">
-                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">修改密码</button>
+                                <button onclick="editPassword()" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">修改密码</button>
                             </div>
                             <div class="pull-right">
                                 <a href="/logout.do" class="btn btn-default btn-flat">注销</a>
@@ -274,84 +334,33 @@
             <div class="modal-body">
                 <form <%--id="editForm" action="${ctx}/cargo/packing/edit.do"--%> method="post">
                     <div class="form-group">
-                        <label for="recipient-name" class="control-label">旧密码:</label>
+                        <label for="recipient-name" class="control-label">原密码:</label>
                         <input type="password" class="form-control" id="oldPassword" name="oldPassword" required placeholder="原密码">
+                        <div style="display: inline" id="tip1"></div>
                     </div>
                     <div class="form-group">
                         <label for="recipient-name" class="control-label">新密码:</label>
-                        <input type="password" class="form-control" name="newPassword" value="" id="newPassword">
+                        <input type="password" class="form-control" name="newPassword" value="" id="newPassword" required placeholder="长度为: 6-18">
+                        <div style="display: inline" id="tip2"></div>
                     </div>
                     <div class="form-group">
                         <label for="recipient-name" class="control-label">确认密码:</label>
-                        <input type="password" class="form-control" id="recipient-name" name="confirmPassword" value="">
+                        <input type="password" class="form-control" id="recipient-name" name="confirmPassword" value="" required placeholder="必须和第一次输入一致!">
+                        <div style="display: inline" id="tip3"></div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal" id="close">关闭</button>
-                <button type="button" class="btn btn-primary" id="save" <%--onclick="document.getElementById('editForm').submit()"--%> >保存</button>
+               <button type="button" class="btn btn-primary" id="save" &lt;%&ndash;onclick="document.getElementById('editForm').submit()"&ndash;%&gt; >保存</button>
+<%--                <button onclick="submitPassword()" class="btn btn-primary" ng-disabled="editForm.$invalid">确定</button>--%>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-<script>
-    $(function () {
-        //这块是反馈相关
-        var degree= ${loginUser.degree}
-        if(degree==0){
-            var url="system/feedback/remind.do"
-            $.get(url,function(data){
-
-                $("#remind").html(data);
-                $("#msg").html("你有"+data+"个新反馈");
-                $("#skipList").text("点击查看待处理反馈")
-            })
-        }
-
-        //这块是消息相关
-        var url="system/chat/msgNumber.do";
-        $.get(url,function(data){
-            $("#msgNumber").html(data)
-        })
-
-
-        $("#recipient-name").blur(
-            function () {
-                if ($("#recipient-name").val()!=$("#newPassword").val()){
-                    alert("两次密码不一致!")
-                }
-
-            }
-        )
-
-        $("#save").click(function(){
-            //alert(1)
-            var oldPassword=$("#oldPassword").val();
-            var newPassword=$("#newPassword").val();
-            var url="changePassword.do";
-            var data = {"oldPassword":oldPassword,"newPassword":newPassword};
-            $.post(url,data,function(d){
-                if(d==1){
-                    $("#close").click();
-                    alert("密码修改成功!")
-                    window.location.href = "login.do";
-                }else {
-                    alert("旧密码输入错误!")
-                }
-            })
-        });
-
-
-    })
-
-    /* function changeState() {
-         //alert(1)
-
-     }*/
-</script>
 </body>
+
+
+
+
+
