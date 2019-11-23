@@ -1,8 +1,10 @@
 package cn.itcast.service.cargo.impl;
 
 import cn.itcast.dao.cargo.ExportDao;
+import cn.itcast.dao.cargo.PackingListDao;
 import cn.itcast.dao.cargo.ShippingOrderDao;
 import cn.itcast.domain.cargo.Export;
+import cn.itcast.domain.cargo.PackingList;
 import cn.itcast.domain.cargo.ShippingOrder;
 import cn.itcast.domain.cargo.ShippingOrderExample;
 import cn.itcast.service.cargo.ShippingOrderService;
@@ -20,7 +22,9 @@ public class ShippingOrderServiceImpl implements ShippingOrderService {
 
     @Autowired
     private ShippingOrderDao shippingOrderDao;
-        //装箱单dao
+    //装箱单dao
+    @Autowired
+    private PackingListDao packingListDao;
     @Autowired
     private ExportDao exportDao;
 
@@ -71,16 +75,16 @@ public class ShippingOrderServiceImpl implements ShippingOrderService {
 
         shippingOrder.setCreateTime(new Date());
         shippingOrderDao.insertSelective(shippingOrder);
-/*
-        *//*PackingList packingList = packingListDao.selectByPrimaryKey(shippingOrder.getShippingOrderId());
-        String exportIds = packingList.getExportIds();*//*
+
+      PackingList packingList = packingListDao.selectByPrimaryKey(shippingOrder.getShippingOrderId());
+        String exportIds = packingList.getExportIds();
         String[] ids = exportIds.split(",");
         for (String id : ids) {
             Export export = new Export();
             export.setId(id);
             export.setState(5);
             exportDao.updateByPrimaryKeySelective(export);
-        }*/
+        }
     }
 
     //更新委托单,id是装箱单id
