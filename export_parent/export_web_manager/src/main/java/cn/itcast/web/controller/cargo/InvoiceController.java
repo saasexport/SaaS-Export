@@ -1,5 +1,6 @@
 package cn.itcast.web.controller.cargo;
 
+import cn.itcast.common.utils.BeanMapUtils;
 import com.alibaba.dubbo.common.utils.StringUtils;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.pagehelper.PageInfo;
@@ -9,9 +10,15 @@ import cn.itcast.domain.cargo.ShippingOrderExample;
 import cn.itcast.service.cargo.InvoiceService;
 import cn.itcast.service.cargo.ShippingOrderService;
 import cn.itcast.web.controller.BaseController;
+import net.sf.jasperreports.engine.JREmptyDataSource;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/cargo/invoice")
@@ -133,5 +140,19 @@ public class InvoiceController extends BaseController {
 
     }
 
+    @RequestMapping("/toImport")
+    public void toImport(String invoiceId) throws Exception{
+
+        Invoice invoice = invoiceService.findById(invoiceId);
+
+        String path = session.getServletContext().getRealPath("/")+"/jasper/invoice.jasper";
+
+        Map<String, Object> map = BeanMapUtils.beanToMap(invoice);
+
+        JasperPrint jasperPrint = JasperFillManager.fillReport(path, map, new JREmptyDataSource());
+
+        JasperExportManager.exportReportToPdfStream(jasperPrint, response.getOutputStream());
+
+    }
 
 }

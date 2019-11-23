@@ -149,7 +149,7 @@
                                         <%--<a href="${ctx }/cargo/invoice/toView.do?id=${o.invoiceId}">[查看]</a>--%>
                                     <a href="${ctx }/cargo/invoice/toUpdate.do?invoiceId=${o.invoiceId}">[编辑]</a>
                                     <a href="${ctx }/cargo/invoice/toView.do?invoiceId=${o.invoiceId}">[查看详情]</a>
-                                        <%--<a href="${ctx }/cargo/invoice/toImport.do?invoiceId=${o.invoiceId}">[下载]</a>--%>
+                                    <a href="${ctx }/cargo/invoice/toImport.do?invoiceId=${o.invoiceId}">[下载]</a>
                                 </td>
 
                             </tr>

@@ -33,4 +33,24 @@
         </locales>
         -->
     </fontFamily>
+
+    <fontFamily name="华文宋体">
+        <normal>stsong/stsong.TTF</normal>
+        <bold>stsong/stsong.TTF</bold>
+        <italic>stsong/stsong.TTF</italic>
+        <boldItalic>stsong/stsong.TTF</boldItalic>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <pdfEmbedded>true</pdfEmbedded>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">'华文宋体', Arial, Helvetica, sans-serif</export>
+            <export key="net.sf.jasperreports.xhtml">'华文宋体', Arial, Helvetica, sans-serif</export>
+        </exportFonts>
+        <!--
+        <locales>
+            <locale>en_US</locale>
+            <locale>de_DE</locale>
+        </locales>
+        -->
+    </fontFamily>
+
 </fontFamilies>
