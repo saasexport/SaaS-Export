@@ -125,7 +125,7 @@ public class ExportController extends BaseController{
         //3、调用exportService.update更新
         exportService.update(export);
         //4、跳转重定向页面
-        return "redirect:/cargo/export/list.do";
+        return "redirect:/cargo/packing/list.do";
     }
 
 
