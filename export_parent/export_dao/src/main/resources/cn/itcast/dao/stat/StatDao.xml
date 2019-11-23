@@ -27,5 +27,15 @@
         GROUP BY DATE_FORMAT(TIME, "%H")) st_sys_log1
         ON st_online_info.A1 = st_sys_log1.name
     </select>
+    <select id="getMakertData" parameterType="string" resultType="map">
+        SELECT SUM(price) value,loading_rate name FROM co_contract_product
+        WHERE company_id = #{companyId}
+        GROUP BY loading_rate ORDER BY SUM(price) DESC limit 10
+    </select>
+    <select id="getIpRankData" parameterType="string" resultType="map">
+        SELECT COUNT(ip) value,user_name name FROM st_sys_log
+        WHERE company_id = #{companyId}
+        GROUP BY user_name ORDER BY SUM(ip) DESC LIMIT 10
+    </select>
 
 </mapper>

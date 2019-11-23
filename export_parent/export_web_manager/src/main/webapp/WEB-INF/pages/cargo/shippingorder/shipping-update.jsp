@@ -54,9 +54,9 @@
                     <div class="col-md-4 data">
                         <input type="text" class="form-control" placeholder="货主" name="shipper" value="${shippingOrder.shipper}">
                     </div>
-                    <div class="col-md-2 title">提货抬头</div>
+                    <div class="col-md-2 title">提单抬头</div>
                     <div class="col-md-4 data">
-                        <input type="text" class="form-control" placeholder="提货抬头" name="consignee" value="${shippingOrder.consignee}">
+                        <input type="text" class="form-control" placeholder="提单抬头" name="consignee" value="${shippingOrder.consignee}">
                     </div>
 
                     <div class="col-md-2 title">正本通知人</div>
