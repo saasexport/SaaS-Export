@@ -1,7 +1,5 @@
 package cn.itcast.dao.cargo;
 
-
-
 import cn.itcast.domain.cargo.PackingList;
 import cn.itcast.domain.cargo.PackingListExample;
 
