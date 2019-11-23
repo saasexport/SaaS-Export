@@ -191,6 +191,5 @@ public class PdfController extends BaseController{
 //            参数一:jasperprint对象;
 //            参数二:outputStream对象;
         JasperExportManager.exportReportToPdfStream(jp, response.getOutputStream());
-
     }
 }

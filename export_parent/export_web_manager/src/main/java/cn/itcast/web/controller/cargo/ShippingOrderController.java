@@ -1,8 +1,11 @@
 package cn.itcast.web.controller.cargo;
 
+import cn.itcast.domain.cargo.PackingList;
+import cn.itcast.domain.cargo.PackingListExample;
 import cn.itcast.domain.cargo.ShippingOrder;
 import cn.itcast.domain.cargo.ShippingOrderExample;
 import cn.itcast.service.cargo.ExportProductService;
+import cn.itcast.service.cargo.PackingListService;
 import cn.itcast.service.cargo.ShippingOrderService;
 import cn.itcast.web.controller.BaseController;
 import com.alibaba.dubbo.config.annotation.Reference;
@@ -19,8 +22,8 @@ public class ShippingOrderController extends BaseController {
 
     @Reference
     private ShippingOrderService shippingOrderService;
-//    @Reference
-//    private PackingListService packingListService;
+    @Reference
+     private PackingListService packingListService;
     @Reference
     private ExportProductService exportProductService;
 
@@ -71,13 +74,13 @@ public class ShippingOrderController extends BaseController {
     @RequestMapping("/toAdd")
     public String toAdd(@RequestParam(defaultValue = "1") int page,
                         @RequestParam(defaultValue = "5") int size) {
-////        //2.显示所有不是草稿状态的装箱单和状态
-////        PackingListExample packingListExample = new PackingListExample();
-////        PackingListExample.Criteria criteria = packingListExample.createCriteria();
-////        criteria.andCompanyIdEqualTo(companyId);
-////        //criteria.andStateEqualTo(1);
-////        PageInfo all = packingListService.findAll(page, size, packingListExample);
-//        request.setAttribute("page", all);
+        //2.显示所有不是草稿状态的装箱单和状态
+       PackingListExample packingListExample = new PackingListExample();
+        PackingListExample.Criteria criteria = packingListExample.createCriteria();
+        criteria.andCompanyIdEqualTo(companyId);
+        criteria.andStateEqualTo(1);
+        PageInfo all = packingListService.findAll(page, size, packingListExample);
+        request.setAttribute("page", all);
         return "cargo/shippingorder/shipping-add";
     }
 
@@ -97,10 +100,10 @@ public class ShippingOrderController extends BaseController {
             shippingOrder.setShippingOrderId(PackingListId);
             //为空,就是正在进行保存
             shippingOrderService.save(shippingOrder);
-            /*PackingList packingList = new PackingList();
+            PackingList packingList = new PackingList();
             packingList.setPackingListId(PackingListId);
-            packingList.setState(2);
-            packingListService.update(packingList);*/
+            packingList.setState(3);
+            packingListService.update(packingList);
         } else {
             shippingOrder.setUpdateBy(loginUser.getUserName());
             shippingOrderService.update(shippingOrder);
@@ -117,8 +120,8 @@ public class ShippingOrderController extends BaseController {
         ShippingOrder shippingOrder = shippingOrderService.findById(shippingOrderId);
         request.setAttribute("shippingOrder", shippingOrder);
         //2.显示依赖的本条装箱单和状态
-      /*  PackingList packingList = packingListService.findById(shippingOrderId);
-        request.setAttribute("page", packingList);*/
+        PackingList packingList = packingListService.findById(shippingOrderId);
+        request.setAttribute("page", packingList);
         return "cargo/shippingorder/shipping-update";
     }
 
@@ -131,8 +134,8 @@ public class ShippingOrderController extends BaseController {
         ShippingOrder shippingOrder = shippingOrderService.findById(shippingOrderId);
         request.setAttribute("shippingOrder", shippingOrder);
         //2.显示依赖的本条装箱单和状态
-        /*PackingList packingList = packingListService.findById(shippingOrderId);
-        request.setAttribute("page", packingList);*/
+        PackingList packingList = packingListService.findById(shippingOrderId);
+        request.setAttribute("page", packingList);
         return "cargo/shippingorder/shipping-view";
     }
 
