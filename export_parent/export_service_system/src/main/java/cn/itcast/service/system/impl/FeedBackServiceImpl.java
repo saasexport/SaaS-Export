@@ -43,6 +43,22 @@ public class FeedBackServiceImpl implements FeedBackService {
         PageHelper.startPage(page, size);
 
         List<FeedBack> feedBacks = feedBackDao.selectByExample(feedBackExample);
+
         return new PageInfo(feedBacks);
+    }
+
+    public void delete(String id) {
+        feedBackDao.deleteByPrimaryKey(id);
+    }
+
+    public FeedBack findById(String id) {
+
+        return feedBackDao.selectByPrimaryKey(id);
+    }
+
+    public void updateFeedback(FeedBack feedBack) {
+        feedBack.setState("1");
+        feedBackDao.updateByPrimaryKeySelective(feedBack);
+
     }
 }

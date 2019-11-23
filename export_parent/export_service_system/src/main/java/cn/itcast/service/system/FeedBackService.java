@@ -24,4 +24,10 @@ public interface FeedBackService {
     void save(FeedBack feedBack);
 
     PageInfo findAll(FeedBackExample feedBackExample, int page, int size);
+
+    void delete(String id);
+
+    FeedBack findById(String id);
+
+    void updateFeedback(FeedBack feedBack);
 }

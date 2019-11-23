@@ -34,8 +34,13 @@ public class feedbackController extends BaseController {
     @RequestMapping("/list")
     public String list(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "5") int size) {
         FeedBackExample feedBackExample = new FeedBackExample();
-        FeedBackExample.Criteria criteria = feedBackExample.createCriteria();
-        criteria.andInputByEqualTo(loginUser.getUserName());
+
+        if (loginUser.getDegree() != 0) {
+            FeedBackExample.Criteria criteria = feedBackExample.createCriteria();
+            criteria.andInputByEqualTo(loginUser.getUserName());
+
+        }
+
         PageInfo feedBacksList = feedBackService.findAll(feedBackExample, page, size);
 
         request.setAttribute("page", feedBacksList);
@@ -62,26 +67,51 @@ public class feedbackController extends BaseController {
         feedBack.setState("0");
         feedBackService.save(feedBack);
         String email = userService.findSaasEmail(0);
-
-//        try {
-//            MailUtil.sendMsg(email, "用户反馈",
-//                    "您好,您有新的反馈,请及时处理"
-//            );
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
-
-        return "redirect:/system/feedback/list.do";
-    }
-
-    @RequestMapping(value = "delete")
-    public String delete(String id){
-
+//这里因为账号邮箱不能使用，所以改成固定值
+        String email1 = "463003465@qq.com";
+        try {
+            MailUtil.sendMsg(email1, "用户反馈",
+                    "您好,您有新的反馈,请及时处理"
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
         return "redirect:/system/feedback/list.do";
     }
 
+    @RequestMapping(value = "delete", name = "删除")
+    public String delete(String id) {
+
+        feedBackService.delete(id);
+
+        return "redirect:/system/feedback/list.do";
+    }
+
+    @RequestMapping(value = "toView", name = "查看")
+    public String toView(String id) {
+
+        FeedBack feedBack = feedBackService.findById(id);
+        request.setAttribute("feedback", feedBack);
+        return "system/feedback/feedback-view";
+    }
+
+    @RequestMapping(value = "/toProcess", name = "跳转到处理列表")
+    public String toProcess(String id) {
+
+        FeedBack feedBack = feedBackService.findById(id);
+        request.setAttribute("feedback", feedBack);
+
+        return "system/feedback/feedback-process";
+    }
+
+    @RequestMapping(value = "/updateFeedback", name = "保存处理反馈")
+    public String updateFeedback(FeedBack feedBack) {
+
+        feedBackService.updateFeedback(feedBack);
+
+        return "redirect:/system/feedback/list.do";
+    }
 
 }
