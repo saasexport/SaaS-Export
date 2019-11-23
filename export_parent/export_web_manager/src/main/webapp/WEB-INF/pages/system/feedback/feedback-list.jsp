@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="../../base.jsp"%>
+<%@ include file="../../base.jsp" %>
 
 <!DOCTYPE html>
 <html>
@@ -20,11 +21,11 @@
 <script>
     function deleteById() {
         var id = getCheckId()
-        if(id) {
-            if(confirm("你确认要删除此条记录吗？")) {
-                location.href="/system/feedback/delete.do?id="+id;
+        if (id) {
+            if (confirm("你确认要删除此条记录吗？")) {
+                location.href = "/system/feedback/delete.do?id=" + id;
             }
-        }else{
+        } else {
             alert("请勾选待处理的记录，且每次只能勾选一个")
         }
     }
@@ -60,9 +61,19 @@
                     <div class="pull-left">
                         <div class="form-group form-inline">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-default" title="新建" onclick='location.href="/system/feedback/toAdd.do"'><i class="fa fa-file-o"></i> 新建</button>
-                                <button type="button" class="btn btn-default" title="删除" onclick='deleteById()'><i class="fa fa-trash-o"></i> 删除</button>
-                                <button type="button" class="btn btn-default" title="刷新" onclick="window.location.reload();"><i class="fa fa-refresh"></i> 刷新</button>
+                                <c:if test="${loginUser.degree!=0}">
+                                    <button type="button" class="btn btn-default" title="新建"
+                                            onclick='location.href="/system/feedback/toAdd.do"'><i class="fa fa-file-o"></i>
+                                        新建
+                                    </button>
+                                    <button type="button" class="btn btn-default" title="删除" onclick='deleteById()'><i
+                                            class="fa fa-trash-o"></i> 删除
+                                    </button>
+                                </c:if>
+
+                                <button type="button" class="btn btn-default" title="刷新"
+                                        onclick="window.location.reload();"><i class="fa fa-refresh"></i> 刷新
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -84,6 +95,7 @@
                             <th class="sorting">反馈时间</th>
                             <th class="sorting">反馈类型</th>
                             <th class="sorting">反馈主题</th>
+                            <th class="sorting">反馈人</th>
                             <th class="sorting">反馈内容</th>
                             <th class="sorting">回复状态</th>
 
@@ -95,9 +107,10 @@
                             <tr>
                                 <td><input name="ids" value="${item.feedbackId}" type="checkbox"></td>
                                 <td>
-                                        ${item.inputTime}
+
+                                    ${item.inputTime}
                                 </td>
-                                1管理2安全3建议4其他
+
 
                                 <c:if test="${item.classType==1}">
                                     <td>管理问题</td>
@@ -111,14 +124,28 @@
                                 <c:if test="${item.classType==2}">
                                     <td>其他问题</td>
                                 </c:if>
-
                                 <td>${item.title}</td>
+                                <td>${item.inputBy}</td>
                                 <td>${item.content}</td>
                                 <td>${item.state ==0?'未审核':'已审核'}</td>
 
-                                <td class="text-center">
-                                    <button type="button" class="btn bg-olive btn-xs" onclick='location.href="/system/feedback/veiw.do?id=${item.feedbackId}"'>编辑</button>
-                                </td>
+
+                                <th class="text-center">
+
+                                    <c:if test="${loginUser.degree!=0}">
+                                        <button type="button" class="btn bg-olive btn-xs"
+                                                onclick='location.href="/system/feedback/toView.do?id=${item.feedbackId}"'>
+                                            查看
+                                        </button>
+                                    </c:if>
+                                    <c:if test="${loginUser.degree==0}">
+                                        <button type="button" class="btn bg-olive btn-xs"
+                                                onclick='location.href="/system/feedback/toProcess.do?id=${item.feedbackId}"'>
+                                            处理
+                                        </button>
+                                    </c:if>
+                                </th>
+
                             </tr>
                         </c:forEach>
                         </tbody>
@@ -129,7 +156,7 @@
 
             <div class="box-footer">
                 <jsp:include page="../../common/page.jsp">
-                    <jsp:param value="${ctx}/company/list.do" name="pageUrl"/>
+                    <jsp:param value="/system/feedback/list.do" name="pageUrl"/>
                 </jsp:include>
             </div>
             <!-- /.box-footer-->
