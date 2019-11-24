@@ -57,10 +57,6 @@
 
     })
 
-    /* function changeState() {
-         //alert(1)
-
-     }*/
 
 </script>
 
