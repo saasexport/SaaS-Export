@@ -11,6 +11,7 @@ import com.alibaba.druid.util.StringUtils;
 import com.github.pagehelper.util.StringUtil;
 import jdk.Exported;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,26 +40,26 @@ public class LoginController extends BaseController {
 
     @RequestMapping("/firstLogin")
     public String firstLogin(String email, String password, String openId) {
-        try {
-            if (!userService.findByEmail(email).getOpenId().equals(null)) {
+        String useropenid = userService.findByEmail(email).getOpenId();
+            if (useropenid!=null&& !useropenid.equals("")) {
                 request.setAttribute("error", "此用户已绑定微信账号,请重试");
                 return "forward:login.jsp";
-            } else {
-                UsernamePasswordToken token = new UsernamePasswordToken(email, password);
-                Subject subject = SecurityUtils.getSubject();
-                subject.login(token);
-                User user = (User) subject.getPrincipal();
-                session.setAttribute("loginUser", user);
-                List<Module> modules = moduleService.findModuleByUser(user);
-                session.setAttribute("modules", modules);
-                userService.AddOpenId(openId, email);
-                return "home/main";
+            }else {
+                try {
+                    UsernamePasswordToken token = new UsernamePasswordToken(email, password);
+                    Subject subject = SecurityUtils.getSubject();
+                    subject.login(token);
+                    User user = (User) subject.getPrincipal();
+                    session.setAttribute("loginUser", user);
+                    List<Module> modules = moduleService.findModuleByUser(user);
+                    session.setAttribute("modules", modules);
+                    userService.AddOpenId(openId, email);
+                    return "home/main";
+                } catch (AuthenticationException e) {
+                    request.setAttribute("error", "用户名或密码错误");
+                    return "/weiXinLogin";
+                }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-            request.setAttribute("error", "用户名或密码错误");
-            return "/weiXinLogin";
-        }
     }
 
     @RequestMapping("/weiXinLogin")
