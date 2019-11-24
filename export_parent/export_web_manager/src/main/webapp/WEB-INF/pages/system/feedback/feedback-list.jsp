@@ -112,7 +112,7 @@
 
                                         ${item.inputTime}
                                 </td>--%>
-                                <td><fmt:formatDate  value="${item.inputTime}" pattern="yyyy-MM-dd"/></td>
+                                <td><fmt:formatDate  value="${item.inputTime}" pattern="yyyy-MM-dd hh:mm:ss"/></td>
 
 
                                 <c:if test="${item.classType==1}">
