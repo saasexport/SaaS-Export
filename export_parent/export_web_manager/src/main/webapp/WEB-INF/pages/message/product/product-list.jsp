@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="../../base.jsp"%>
 <!DOCTYPE html>
@@ -98,7 +99,7 @@
                                 <td>${item.price }</td>
                                 <td>${item.qty}</td>
                                 <td>${item.createBy }</td>
-                                <td>${item.createTime}</td>
+                                <td><fmt:formatDate value="${item.createTime}"  type="both" pattern="yyyy-MM-dd hh:mm:ss"/> </td>
                                 <td>${item.description}</td>
                                 <th class="text-center">
                                     <button type="button" class="btn bg-olive btn-xs" onclick='location.href="${ctx}/message/product/toUpdate.do?id=${item.id}"'>编辑</button>
@@ -115,7 +116,6 @@
                 </jsp:include>
             </div>
         </div>
-
     </section>
 </div>
 </body>

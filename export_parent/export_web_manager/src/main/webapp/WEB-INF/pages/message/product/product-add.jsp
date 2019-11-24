@@ -39,7 +39,7 @@
         <!--订单信息-->
         <div class="panel panel-default">
             <div class="panel-heading">商品信息</div>
-            <form id="editForm" action="${ctx}/message/product/edit.do" method="post">
+            <form id="editForm" action="${ctx}/message/product/edit.do" method="post" <%--enctype="multipart/form-data"--%>>
                 <input type="hidden" id="deptName" name="deptName" value="${product.id}">
                 <div class="row data-type" style="margin: 0px">
                     <div class="col-md-2 title">编号</div>
