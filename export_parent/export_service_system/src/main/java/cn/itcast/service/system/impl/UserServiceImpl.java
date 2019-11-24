@@ -60,9 +60,11 @@ public class UserServiceImpl implements UserService{
     }
 
     public User findByOpenId(String openId) {
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXX"+openId);
         User user = null;
         try {
             user = userDao.findByOpenId(openId);
+
             return user;
         } catch (Exception e) {
             return user;

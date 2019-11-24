@@ -1,5 +1,6 @@
 package cn.itcast.web.shiro;
 
+import cn.itcast.common.utils.Encrypt;
 import cn.itcast.domain.system.Module;
 import cn.itcast.domain.system.User;
 import cn.itcast.service.system.ModuleService;
@@ -22,6 +23,7 @@ public class AuthRealm extends AuthorizingRealm {
 
     /**
      * 授权
+     *
      * @param principalCollection 安全数据集合
      * @return
      */
@@ -48,9 +50,13 @@ public class AuthRealm extends AuthorizingRealm {
 
     @Autowired
     private UserService userService;
+    // Object principal 安全数据，User
+    // Object credentials 用户的数据库密码
+    // String realmName 可以随意取名，但是我们一般用类名
 
     /**
      * 身份认证
+     *
      * @param authenticationToken
      * @return
      * @throws AuthenticationException
@@ -58,18 +64,21 @@ public class AuthRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         //1、将authenticationToken转化为upToken
         UsernamePasswordToken upToken = (UsernamePasswordToken) authenticationToken;
-
-        //2、通过upToken取用户名，email
+        //2、通过upToken取用户名，email or openid
         String email = upToken.getUsername();
-
         //3、查找用户实体类，放入安全数据
         User user = userService.findByEmail(email);
-        // Object principal 安全数据，User
-        // Object credentials 用户的数据库密码
-        // String realmName 可以随意取名，但是我们一般用类名
+        System.out.println("AAAAAAAAAAAAA"+user);
         if (user != null) {
-            return new SimpleAuthenticationInfo(user, user.getPassword(), this.getName());
+                System.out.println("AAAAAAAAAAAAAAAA" + "no");
+                return new SimpleAuthenticationInfo(user, user.getPassword(), this.getName());
+
         } else {
+            User wxuser = userService.findByOpenId(email);
+            if (wxuser!=null) {
+                System.out.println("AAAAAAAAAAAAAAAA" + "ok");
+                return new SimpleAuthenticationInfo(wxuser, Encrypt.md5(wxuser.getOpenId(), email),this.getName());
+            }
             return null;
         }
     }

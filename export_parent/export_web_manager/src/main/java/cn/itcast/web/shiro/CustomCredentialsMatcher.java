@@ -19,14 +19,16 @@ public class CustomCredentialsMatcher extends SimpleCredentialsMatcher {
         UsernamePasswordToken upToken = (UsernamePasswordToken) token;
         String userPassword = String.valueOf(upToken.getPassword());
         String email = upToken.getUsername();
-
-        //1.1、加密
-        String md5Password = Encrypt.md5(userPassword, email);
-
-        //2、通过AuthenticationInfo取数据库密码
-        String dbPassword = String.valueOf(info.getCredentials());
-
-        //3、比较两个密码
-        return md5Password.equals(dbPassword);
+        if (userPassword.equals(String.valueOf(info.getCredentials()))){
+            //免密登录
+            return true;
+        }else{
+            //1.1、加密
+            String md5Password = Encrypt.md5(userPassword, email);
+            //2、通过AuthenticationInfo取数据库密码
+            String dbPassword = String.valueOf(info.getCredentials());
+            //3、比较两个密码
+            return md5Password.equals(dbPassword);
+        }
     }
 }

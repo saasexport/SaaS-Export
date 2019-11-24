@@ -67,7 +67,7 @@
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
         //TODO  优先级:高 这个页面是聊天室设置处,还没有编写完成
-        websocket = new WebSocket("ws://localhost:8080/"+fromer);
+        websocket = new WebSocket("ws://note.java.itcast.cn:80/"+fromer);
     }
     else {
         alert('当前浏览器 Not support websocket')

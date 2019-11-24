@@ -17,6 +17,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
 
 import java.util.Enumeration;
 import java.util.List;
@@ -31,63 +34,26 @@ public class LoginController extends BaseController {
     @Autowired
     private ModuleService moduleService;
 
-	/*@RequestMapping("/login")
-	public String login(String email,String password) {
-	    //1、判断传入的参数
-        if (StringUtil.isEmpty(email)||StringUtil.isEmpty(password)){
-            //2、如果email和password有一项没有输，跳转登录页面，提示
-            request.setAttribute("error", "请输入用户名或密码！");
-            return "forward:login.jsp";
-        }
-
-        //3、通过email查询用户实体类
-        User user = userService.findByEmail(email);
-
-        //4、查到了 user!=null，数据库密码 == 输入的密码
-        if (user!=null && user.getPassword().equals(password)){
-
-            Enumeration attributeNames = session.getAttributeNames();
-            while (attributeNames.hasMoreElements()){
-                String string = (String) attributeNames.nextElement();
-                System.out.println("-----------------------"+string);
-                System.out.println(session.getAttribute(string));
-            }
-
-            //查找用户对应的菜单（模块）
-            List<Module> moduleList = moduleService.findModuleByUser(user);
-            session.setAttribute("modules", moduleList);
-
-            //5、写入session，并且跳转home/main
-            session.setAttribute("loginUser", user);
-
-            Enumeration attributeNames1 = session.getAttributeNames();
-            while (attributeNames1.hasMoreElements()){
-                String string = (String) attributeNames1.nextElement();
-                System.out.println("========"+string);
-                System.out.println(session.getAttribute(string));
-            }
-
-            return "home/main";
-        }else {
-            //6、如果没有查到user或者密码不对，跳转登录页面，提示
-            request.setAttribute("error", "用户名或密码不正确！");
-            return "forward:login.jsp";
-        }
-	}*/
-
+    private Jedis jedis;
+    private JedisPool jedisPool;
 
     @RequestMapping("/firstLogin")
     public String firstLogin(String email, String password, String openId) {
         try {
-            UsernamePasswordToken token = new UsernamePasswordToken(email, password);
-            Subject subject = SecurityUtils.getSubject();
-            subject.login(token);
-            User user = (User) subject.getPrincipal();
-            session.setAttribute("loginUser", user);
-            List<Module> modules = moduleService.findModuleByUser(user);
-            session.setAttribute("modules", modules);
-            userService.AddOpenId(openId, email);
-            return "home/main";
+            if (!userService.findByEmail(email).getOpenId().equals(null)) {
+                request.setAttribute("error", "此用户已绑定微信账号,请重试");
+                return "forward:login.jsp";
+            } else {
+                UsernamePasswordToken token = new UsernamePasswordToken(email, password);
+                Subject subject = SecurityUtils.getSubject();
+                subject.login(token);
+                User user = (User) subject.getPrincipal();
+                session.setAttribute("loginUser", user);
+                List<Module> modules = moduleService.findModuleByUser(user);
+                session.setAttribute("modules", modules);
+                userService.AddOpenId(openId, email);
+                return "home/main";
+            }
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("error", "用户名或密码错误");
@@ -101,7 +67,16 @@ public class LoginController extends BaseController {
         String secret = "db9d6b88821df403e5ff11742e799105";
         String url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + appId + "&secret=" + secret + "&code=" + code + "&grant_type=authorization_code";
         Map<String, Object> map = HttpUtils.sendGet(url);
-        String openId = map.get("openid").toString();
+        String openId = null;
+        try {
+            openId = map.get("openid").toString();
+            jedisPool = new JedisPool(new JedisPoolConfig(), "39.106.187.252");
+            jedis = jedisPool.getResource();
+            jedis.set("openId", openId);
+        } catch (Exception e) {
+            openId = jedis.get("openId");
+            e.printStackTrace();
+        }
         User user = userService.findByOpenId(openId);
         if (user == null) {
             User user1 = new User();
@@ -109,9 +84,25 @@ public class LoginController extends BaseController {
             request.setAttribute("user", user1);
             return "/weiXinLogin";
         } else {
-            System.out.println("免密登录修改");
-            return "home/main";
+            //免密登录
+            Subject subject = SecurityUtils.getSubject();
+            String email = user.getOpenId();
+            String password = Encrypt.md5(openId, email);
+            UsernamePasswordToken upToken = new UsernamePasswordToken(openId, password);
+            subject.login(upToken);
+            User users = (User) subject.getPrincipal();
+            session.setAttribute("loginUser", users);
+            List<Module> moduleList = moduleService.findModuleByUser(users);
+            session.setAttribute("modules", moduleList);
+            Enumeration attributeNames = session.getAttributeNames();
+            while (attributeNames.hasMoreElements()) {
+                String string = (String) attributeNames.nextElement();
+                System.out.println("-----------------------" + string);
+                System.out.println(session.getAttribute(string));
             }
+            //5、进行登录
+            return "home/main";
+        }
     }
 
     //通过shiro进行登录
@@ -123,46 +114,47 @@ public class LoginController extends BaseController {
         }
         //构造token 获取subject对象 调用subject的login方法进行登录
 
-        if (request.getParameter("openId") == null) {
-            try {
-                //1、创建subject
-                Subject subject = SecurityUtils.getSubject();
-                //1.1、通过email,password创建token
-                UsernamePasswordToken upToken = new UsernamePasswordToken(email, password);
-                //2、利用subject.login方法进行登录
-                subject.login(upToken);  //两个方法：1、身份认证；2、密码比较
+        /*        if (request.getParameter("openId") == null) {*/
+        try {
+            //1、创建subject
+            Subject subject = SecurityUtils.getSubject();
+            //1.1、通过email,password创建token
+            UsernamePasswordToken upToken = new UsernamePasswordToken(email, password);
+            //2、利用subject.login方法进行登录
+            subject.login(upToken);  //两个方法：1、身份认证；2、密码比较
 
-                //3、通过subject取到安全数据（user对象存入安全数据）
-                User user = (User) subject.getPrincipal();
+            //3、通过subject取到安全数据（user对象存入安全数据）
+            User user = (User) subject.getPrincipal();
 
-                if (user != null) {
-                    //4、放入到session
-                    session.setAttribute("loginUser", user);
-                    List<Module> moduleList = moduleService.findModuleByUser(user);
-                    session.setAttribute("modules", moduleList);
+            if (user != null) {
+                //4、放入到session
+                session.setAttribute("loginUser", user);
+                List<Module> moduleList = moduleService.findModuleByUser(user);
+                session.setAttribute("modules", moduleList);
 
 
-                    Enumeration attributeNames = session.getAttributeNames();
-                    while (attributeNames.hasMoreElements()) {
-                        String string = (String) attributeNames.nextElement();
-                        System.out.println("-----------------------" + string);
-                        System.out.println(session.getAttribute(string));
-                    }
-
-                    //5、进行登录
-                    return "home/main";
-                } else {
-                    request.setAttribute("error", "用户不存在！");
-                    return "forward:login.jsp";
+                Enumeration attributeNames = session.getAttributeNames();
+                while (attributeNames.hasMoreElements()) {
+                    String string = (String) attributeNames.nextElement();
+                    System.out.println("-----------------------" + string);
+                    System.out.println(session.getAttribute(string));
                 }
-            } catch (Exception e) {
-                request.setAttribute("error", "用户名或密码不正确！");
+
+                //5、进行登录
+                return "home/main";
+            } else {
+                request.setAttribute("error", "用户不存在！");
                 return "forward:login.jsp";
             }
-        } else {
+        } catch (Exception e) {
+            request.setAttribute("error", "用户名或密码不正确！");
+            return "forward:login.jsp";
+        }
+/*        } else {
             String openId = request.getParameter("openId");
             String enterEmail = request.getParameter("email");
             String enterPassword = request.getParameter("password");
+
             UsernamePasswordToken token = new UsernamePasswordToken(enterEmail, enterPassword, openId);
             Subject subject = SecurityUtils.getSubject();
             subject.login(token);
@@ -172,7 +164,7 @@ public class LoginController extends BaseController {
             List<Module> modules = moduleService.findModuleByUser(user);
             session.setAttribute("modules", modules);
             return "home/main";
-        }
+        }*/
     }
 
     //退出
