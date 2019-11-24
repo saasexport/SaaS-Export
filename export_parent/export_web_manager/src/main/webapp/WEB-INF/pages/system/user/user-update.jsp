@@ -62,10 +62,10 @@
                         <input type="text" class="form-control" placeholder="邮箱" name="email" value="${user.email}">
                     </div>
 
-                    <div class="col-md-2 title">密码</div>
-                    <div class="col-md-4 data">
-                        <input type="password" class="form-control" placeholder="密码" name="password" value="${user.password}">
-                    </div>
+<%--                    <div class="col-md-2 title">密码</div>--%>
+<%--                    <div class="col-md-4 data">--%>
+<%--                        <input type="password" class="form-control" placeholder="密码" name="password" value="${user.password}">--%>
+<%--                    </div>--%>
 
                     <div class="col-md-2 title">薪水</div>
                     <div class="col-md-4 data">
