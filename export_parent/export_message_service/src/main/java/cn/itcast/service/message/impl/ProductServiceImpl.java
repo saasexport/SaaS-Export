@@ -7,7 +7,7 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
-import com.itcast.service.message.ProductService;
+import cn.itcast.service.message.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;

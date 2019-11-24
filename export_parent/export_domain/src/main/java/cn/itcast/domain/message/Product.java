@@ -1,10 +1,12 @@
 package cn.itcast.domain.message;
 
+import cn.itcast.domain.BaseEntity;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Product implements Serializable {
+public class Product extends BaseEntity implements Serializable {
 
     private String id;
 

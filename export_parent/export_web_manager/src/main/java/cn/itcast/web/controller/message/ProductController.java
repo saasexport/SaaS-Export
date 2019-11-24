@@ -10,7 +10,7 @@ import cn.itcast.web.controller.BaseController;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.pagehelper.PageInfo;
 
-import com.itcast.service.message.ProductService;
+import cn.itcast.service.message.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,7 +45,7 @@ public class ProductController extends BaseController {
         FactoryExample factoryExample = new FactoryExample();
         FactoryExample.Criteria fCriteria = factoryExample.createCriteria();
         fCriteria.andCtypeEqualTo("货物");
-      List<Factory> factories = factoryService.findAll(factoryExample);
+        List<Factory> factories = factoryService.findAll(factoryExample);
         request.setAttribute("factoryList", factories);
         return "message/product/product-add";
     }
@@ -75,7 +75,7 @@ public class ProductController extends BaseController {
         FactoryExample factoryExample = new FactoryExample();
         FactoryExample.Criteria fCriteria = factoryExample.createCriteria();
         fCriteria.andCtypeEqualTo("货物");
-       List<Factory> factories = factoryService.findAll(factoryExample);
+        List<Factory> factories = factoryService.findAll(factoryExample);
         request.setAttribute("factoryList", factories);
         request.setAttribute("product", product);
         return "message/product/product-update";

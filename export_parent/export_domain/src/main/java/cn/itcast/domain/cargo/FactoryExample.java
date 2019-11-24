@@ -1446,7 +1446,7 @@ public class FactoryExample implements Serializable {
      *
      * @mbg.generated
      */
-    public static class Criterion implements Serializable{
+    public static class Criterion {
         private String condition;
 
         private Object value;
