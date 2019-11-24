@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
+import java.util.UUID;
 
 @Controller
 @RequestMapping(value = "/cargo/invoice")
@@ -62,7 +63,9 @@ public class InvoiceController extends BaseController {
     @RequestMapping(value = "/edit")
     public String edit(Invoice invoice, String id) {
         if (StringUtils.isEmpty(invoice.getInvoiceId())) {
-
+            if (id == null) {
+                id = UUID.randomUUID().toString();
+            }
             //保存
             invoice.setInvoiceId(id);
 
@@ -110,7 +113,7 @@ public class InvoiceController extends BaseController {
 
         invoiceService.delete(invoiceId);
 
-        return "redirect:/cargo/finance/list.do";
+        return "redirect:/cargo/invoice/list.do";
 
     }
 
