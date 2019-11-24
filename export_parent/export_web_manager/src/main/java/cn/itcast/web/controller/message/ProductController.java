@@ -45,7 +45,7 @@ public class ProductController extends BaseController {
         FactoryExample factoryExample = new FactoryExample();
         FactoryExample.Criteria fCriteria = factoryExample.createCriteria();
         fCriteria.andCtypeEqualTo("货物");
-        List<Factory> factories = factoryService.findAll(factoryExample);
+        List<Factory> factories = factoryService.selectByExample(factoryExample);
         request.setAttribute("factoryList", factories);
         return "message/product/product-add";
     }
@@ -75,7 +75,7 @@ public class ProductController extends BaseController {
         FactoryExample factoryExample = new FactoryExample();
         FactoryExample.Criteria fCriteria = factoryExample.createCriteria();
         fCriteria.andCtypeEqualTo("货物");
-        List<Factory> factories = factoryService.findAll(factoryExample);
+        List<Factory> factories = factoryService.selectByExample(factoryExample);
         request.setAttribute("factoryList", factories);
         request.setAttribute("product", product);
         return "message/product/product-update";
@@ -86,5 +86,4 @@ public class ProductController extends BaseController {
         productService.delete(id);
         return "redirect:/message/product/list.do";
     }
-
 }
