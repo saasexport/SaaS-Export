@@ -22,6 +22,8 @@
         <module>export_stat_interface</module>
         <module>export_stat_service</module>
         <module>export_generator</module>
+        <module>export_message_interface</module>
+        <module>export_message_service</module>
     </modules>
 
 
