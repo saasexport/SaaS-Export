@@ -111,7 +111,7 @@
             </div>
             <div class="box-footer">
                 <jsp:include page="../../common/page.jsp">
-                    <jsp:param value="${ctx}/system/user/list.do" name="pageUrl"/>
+                    <jsp:param value="list.do" name="pageUrl"/>
                 </jsp:include>
             </div>
         </div>
