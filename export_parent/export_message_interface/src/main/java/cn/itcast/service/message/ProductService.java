@@ -1,4 +1,4 @@
-package com.itcast.service.message;
+package cn.itcast.service.message;
 
 import cn.itcast.domain.message.Product;
 import cn.itcast.domain.message.ProductExample;
